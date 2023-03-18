@@ -1,0 +1,190 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  
+  .navbar {
+    overflow: hidden;
+    background-color: none;
+  }
+  
+  .navbar a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .navbar h2{
+    font-family: Arial;
+    font-weight: lighter;
+    color: white;
+  }
+  .navbar a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  .navbar-right {
+    float: right;
+  }
+
+  .navbar-left {
+    float: left;
+  }
+.container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+	  background-position: top center;
+	  position: relative;
+	  z-index: 1;
+}
+
+.container h1{
+    padding: 10px;
+    font-weight: lighter;
+    color: #ddd;
+    text-decoration: wavy;
+
+}
+
+.container h2{
+  padding: 10px;
+  font-weight: lighter;
+  color: #ddd;
+  text-decoration: wavy;
+}
+
+.container .form1{
+  justify-content: center;
+}
+
+.container .form1 h3{
+    padding: 10px;
+    font-weight: lighter;
+    color: #ddd;
+    text-decoration: wavy;
+}
+
+.block{
+    width: 300px;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(255, 255, 255, 0);
+    text-align: center;
+}
+.block{
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.block select {
+    color: white;
+    background: none;
+    border: 0;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    text-decoration-color: black;
+    border: 3px solid black;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    transition: 0.25px;
+  }
+.block select:focus
+  {
+      width: 250px;
+      border-color: white;
+  }
+.block option{
+    color: white;
+    background-color: black;
+    text-align: center;
+    justify-content: center;
+}
+.block input[type="date"]{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.block input[type="text"],.block input[type="password"], .block input[type="date"], .block input[type="file"]
+{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    text-decoration-color: black;
+    border: 3px solid black;
+    padding: 14px 10px;
+    width: 220px;
+    outline: none;
+    color: white;
+    transition: 0.25px;
+}
+.block input[type="text"]:focus,.block input[type="password"]:focus, .block select:focus, .block input[type="Description"]:focus, .block input[type="date"]:focus, .block input[type="file"]:focus
+{
+    width: 270px;
+    border-color: white;
+}
+.block input[type="Description"]
+{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    text-decoration-color: black;
+    border: 3px solid black;
+    padding: 14px 10px;
+    width: 220px;
+    height: 100px;
+    outline: none;
+    color: white;
+    transition: 0.25px;
+}
+
+.block input[type="submit"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid white;
+    padding: 14px 35px;
+    width: 150px;
+    outline: none;
+    color: white;
+    transition: 0.25px;
+    cursor: pointer;
+}
+
+.block input[type="submit"]:hover, .block input[type="file"]:hover{
+    background: black;
+
+}
+
+.block h1,h4,h5,h3,h7{
+    color: whitesmoke;
+}
+.block label{
+    color: whitesmoke;
+}
+
+.block h5.la{
+border-style: solid;
+}

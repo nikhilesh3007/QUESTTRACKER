@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link rel="stylesheet" type="text/css" href="{% static '/CSS/style12.css' %}">
+  <title>THOR SOLUTIONS</title>
+  <link href="{% static '/IMG/THOR.ico' %}" rel="shortcut icon" type="image/x-icon"/>
+</head>
+<body style="background-image: url('{% static '/IMG/stary.jpg' %}');">
+    <header>
+      <div class="navbar">
+        <div class="navbar-left">
+          <a href="#">THOR</a>
+        </div>
+          <div class="navbar-right">
+            <a href="/Welcome">Home</a>
+            <a href="/logout">Logout</a>
+            <a href="/">Help</a>
+          </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+          <h1>THOR SOLUTIONS</h1>
+      </div>
+    <div class="container">
+      <h2>WELCOME {{name}}</h2>
+    </div>
+    <div class="Options">
+        <button type="button" onclick="CreateTask()">Create Task</button>
+        <button type="button" onclick="EditTask()">Assigned Tasks</button>
+        <button type="button" onclick="ViewATask()">Active Tasks</button>
+        <button type="button" onclick="ViewNATask()">In-Active Tasks</button>
+        <button type="button">TASKS</button>
+      </div>
+    <div class="Options">
+        <button type="button" onclick="CreateTask()">New Projects</button>
+        <button type="button" onclick="EditTask()">Assigned Projects</button>
+        <button type="button" onclick="ViewATask()">Active Tasks</button>
+        <button type="button" onclick="ViewNATask()">In-Active Tasks</button>
+        <button type="button">TASKS</button>
+        <button type="button">TASKS</button>
+      </div>
+      <div class="Options">
+          <button type="button" onclick="RegisterUser()">Register A User</button>
+      </div>
+  </main>
+  <script>
+function CreateTask() {
+  location.replace("/CreateTasks")
+}
+function EditTask() {
+  location.replace("/Assigned-Tasks")
+}
+function ViewATask() {
+  location.replace("/ViewTasks")
+}
+function ViewNATask() {
+  location.replace("/InactiveTasksList")
+}
+function RegisterUser() {
+    location.replace("/Register")
+}
+</script>
+</body>
+</html>

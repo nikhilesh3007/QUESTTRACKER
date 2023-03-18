@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="{% static '/CSS/style4.css' %}">
+      <title>THOR SOLUTIONS</title>
+  <link href="{% static '/IMG/THOR.ico' %}" rel="shortcut icon" type="image/x-icon"/>
+  </head>
+    <body style="background-image: url('{% static '/IMG/stary.jpg' %}');">
+        <header>
+            <div class="navbar">
+            <div class="navbar-left">
+                <a href="#">THOR</a>
+            </div>
+                <div class="navbar-right">
+                <a href="/Welcome">Home</a>
+                <a>Hello User</a>
+                <a href="/login">Logout</a>
+                <a href="/">Help</a>
+                </div>
+            </div>
+        </header>
+        <div class="block">
+            <h1>
+                In-Active PROJECTS LIST
+            </h1>
+            </div>
+        <main>
+            <div class="block1">
+                {% if x != 0 %}
+                    <table style="width:relative">
+                        <tr>
+                        <th>Project-No</th>
+                        <th>Project-Name</th>
+                        <th>Description</th>
+                        <th>Due-Date</th>
+                        <th>Manager-Assigned</th>
+                        <th>Status</th>
+                        <th>Status-Description</th>
+                        <th>Status-Update</th>
+                        <th colspan="2">Action</th>
+                        </tr>
+                        {% for i in task %}
+                        <tr style="height:relative">
+                            {% for j in i %}
+                            <td style="text-align:center">{{j}}</td>
+                            {% if j == i.8 %}
+                                <td style="text-align:center"><a href="media/{{j}}" download="{{j}}">Download</a></td>
+                            {% endif %}
+                            {% endfor %}
+                            <td style="text-align:center; background-color: red; font-weight:5px">INACTIVE</td>
+                            <td style="text-align:center"><a href="/deleteP/{{i.0}}">Delete</a></td>
+                            <td style="text-align:center"><a href="ReactivateP/{{i.0}}">Reactivate</a></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                {% else %}
+                <h1>No In-Active Projects</h1>
+                {% endif %}
+            </div>
+        </main>
+    </body>
+</html>
+
+

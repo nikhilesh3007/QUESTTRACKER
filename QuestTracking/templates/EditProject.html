@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="{% static '/CSS/style5.css' %}">
+    < <title>THOR SOLUTIONS</title>
+  <link href="{% static '/IMG/THOR.ico' %}" rel="shortcut icon" type="image/x-icon"/>
+  </head>
+  <body style="background-image: url('{% static '/IMG/stary.jpg' %}');">
+    <header>
+      <div class="navbar">
+        <div class="navbar-left">
+          <a href="#">THOR</a>
+        </div>
+          <div class="navbar-right">
+            <a href="/Welcome">Home</a>
+            <a href="/">Help</a>
+          </div>
+      </div>
+    </header>
+    <main>
+      <form class="block" action="" method="post">
+        {% csrf_token %}
+        <h1>
+            Edit Project
+        </h1>
+        <label><h3>Project Name</h3></label>
+        <label><h5 class="la">{{tsk.ProjectName}}</h5></label>
+        <label><h3>Project Description</h3></label>
+        <label><h5 class="la">{{tsk.ProjectDescription}}</h5></label>
+        <label for="status"><h4>Status</h4></label>
+        <select name="prostatus" id="prostatus" required>
+            <option value="none" selected disabled hidden>-</option>
+            <option value="In-Progress">In-Progress</option>
+            <option value="Completed">Completed</option>
+            <option value="Pending">Pending</option>
+            <option value="Over-Due">Over-Due</option>
+            <option value="Not-Started">Not-Started</option>
+            <option value="Issue">Issue</option>
+          </select>
+        <input type="text" name="prostatdes" placeholder="Status Description" id="prostatdes" maxlength="800" required>
+        <label><h4>Assigned to</h4></label>
+        <label><h5 class="la">{{tsk.AssignedManager}}</h5></label>
+        <select name="assignedMan" id="assignedMan" required>
+          <option value="none" selected disabled hidden>-</option>
+          {% for i in em %}
+          <option value="{{i}}">{{i}}</option>
+          {% endfor %}
+        </select>
+         <label><h3>Due Date</h3></label>
+        <label><h5 class="la">{{tsk.ProjectDeadline}}</h5></label>
+        <input type="text" name="Duedate" placeholder="Due Date (DD-MM-YYYY)" id="DueDate" onfocus="(this.type='date')" value="{{tsk.ProjectDeadline}}">
+        <label><h7>Upload your Project File</h7></label>
+        <input type="file" name="ProjectFile" value="Project-FILE">
+        <input type="submit" name="" value="Save Project">
+      </form>
+    </main>
+    <script src="scripts.js"></script>
+  </body>
+</html>

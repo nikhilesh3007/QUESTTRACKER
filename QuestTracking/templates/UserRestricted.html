@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link rel="stylesheet" type="text/css" href="{% static '/CSS/style12.css' %}">
+  <title>THOR SOLUTIONS</title>
+  <link href="{% static '/IMG/THOR.ico' %}" rel="shortcut icon" type="image/x-icon"/>
+</head>
+<body style="background-image: url('{% static '/IMG/stary.jpg' %}');">
+    <header>
+      <div class="navbar">
+        <div class="navbar-left">
+          <a href="#">THOR</a>
+        </div>
+          <div class="navbar-right">
+            <a href="/">Home</a>
+            <a href="/">Help</a>
+          </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+          <h1>THOR SOLUTIONS</h1>
+      </div>
+    <div class="container">
+      <h2>!USER RESTRICTED!</h2>
+    </div>
+    <div class="container">
+        <h4 style="color:black; background-color:red;">YOU ARE NOT AUTHORIZED TO VIEW THIS PAGE</h4>
+    </div>
+    <div class="Options">
+        <button type="button" onclick="login()">HOME</button>
+    </div>
+  </main>
+    <script>
+        function login() {
+  location.replace("/Welcome");
+    }
+    </script>
+</body>
+</html>

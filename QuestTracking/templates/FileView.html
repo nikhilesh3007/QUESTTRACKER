@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="{% static '/CSS/style4.css' %}">
+      <title>THOR SOLUTIONS</title>
+  <link href="{% static '/IMG/THOR.ico' %}" rel="shortcut icon" type="image/x-icon"/>
+  </head>
+    <body style="background-image: url('{% static '/IMG/stary.jpg' %}');">
+        <header>
+            <div class="navbar">
+            <div class="navbar-left">
+                <a href="#">THOR</a>
+            </div>
+                <div class="navbar-right">
+                <a href="/Welcome">Home</a>
+                <a>Hello {{name}}</a>
+                <a href="/login">Logout</a>
+                <a href="/">Help</a>
+                </div>
+            </div>
+        </header>
+        <div class="block">
+            <h1>
+                ALL FILES
+            </h1>
+            </div>
+        <main>
+            <div class="block1">
+                {% if x != 0 %}
+                    <table style="width:relative">
+                        <tr>
+                        <th>File-No</th>
+                        <th>File-Name</th>
+                        <th>Type</th>
+                        <th>Uploaded-By</th>
+                        <th>Upload-Date</th>
+                        <th>Action</th>
+                        </tr>
+                        {% for i in task %}
+                        <tr style="height:relative">
+                            {% for j in i %}
+                                {% if j == i.5 %}
+                                        <td style="text-align:center"><a href="media/{{j}}" download="{{j}}">Download</a></td>
+                                {% else %}
+                                        <td style="text-align:center">{{j}}</td>
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </table>
+                {% else %}
+                    <h1>No Files</h1>
+                {% endif %}
+            </div>
+        </main>
+    </body>
+</html>
+
+

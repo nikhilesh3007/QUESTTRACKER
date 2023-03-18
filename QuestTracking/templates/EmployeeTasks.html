@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="{% static '/CSS/style4.css' %}">
+      <title>THOR SOLUTIONS</title>
+  <link href="{% static '/IMG/THOR.ico' %}" rel="shortcut icon" type="image/x-icon"/>
+  </head>
+    <body style="background-image: url('{% static '/IMG/stary.jpg' %}');">
+        <header>
+            <div class="navbar">
+            <div class="navbar-left">
+                <a href="#">THOR</a>
+            </div>
+                <div class="navbar-right">
+                <a href="/Welcome">Home</a>
+                <a href="logout">Logout</a>
+                </div>
+            </div>
+        </header>
+        <div class="block">
+            <h1>
+                YOUR TASKS
+            </h1>
+        </div>
+        <br>
+            <div class="block1">
+                <table style="width:relative">
+                    <tr>
+                    <th>Task-No</th>
+                    <th>Task-Name</th>
+                    <th>Description</th>
+                    <th>Due-Date</th>
+                    <th>Employee-Assigned</th>
+                    <th>Status</th>
+                    <th>Status-Description</th>
+                    <th>Status-Update</th>
+                    <th>FILES</th>
+                    </tr>
+                    {% for i in task %}
+                    <tr style="height:relative">
+                        {% for j in i %}
+                            {% if j == i.0 or j == i.4%}
+                                <td style="text-align:center;">{{j}}</td>
+                            {% elif j == 'INACTIVE' %}
+                                <td style="background-color:red; text-align:center;">{{j}}</td>
+                            {% elif j == 'ACTIVE' %}
+                                <td style="background-color:green; text-align:center;">{{j}}</td>
+                            {% else %}
+                                {% if j == i.8 %}
+                                    <td><a href="media/{{j}}" download="{{j}}">Download</a></td>
+                                {% else %}
+                                    <td>{{j}}</td>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                        <td><div><a href="/editT/{{i.0}}">Edit</a>
+                        <!--<a href="#">Delete</a></div></td>-->
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+    </body>
+</html>
+
+

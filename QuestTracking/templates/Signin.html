@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="{% static '/CSS/style3.css' %}">
+     <title>THOR SOLUTIONS</title>
+  <link href="{% static '/IMG/THOR.ico' %}" rel="shortcut icon" type="image/x-icon"/>
+  </head>
+  <body style="background-image: url('{% static '/IMG/stary.jpg' %}');">
+    <header>
+      <div class="navbar">
+        <div class="navbar-left">
+          <a href="#">THOR</a>
+        </div>
+          <div class="navbar-right">
+            <a href="/Welcome">Home</a>
+            <a href="logout">Logout</a>
+            <a href="/">Help</a>
+          </div>
+      </div>
+    </header>
+    <main>
+      <form class="block" method="post" action="Register">
+        {% csrf_token %}
+        <h1>
+            Employee Register Form
+        </h1>
+        <input type="text" name="name" maxlength="30" placeholder="Enter Full Name" id="name">
+        <input type="text" name="employeeid" maxlength="15"placeholder="Enter Employee Id" id="employeeid">
+        <input type="text" name="employeedes" maxlength="25"placeholder="Enter Employee Designation" id="employeedes">
+        <input type="email" name="emailid" maxlength="30"placeholder="Enter Email Id" id="emailid">
+        <input type="text" name="username" maxlength="30"placeholder="Enter Username" id="username">
+        <input type="password" maxlength="30"name="password" placeholder="Enter Password" id="password">
+        <input type="submit" name="" value="Register">
+      </form>
+    </main>
+  </body>
+</html>
